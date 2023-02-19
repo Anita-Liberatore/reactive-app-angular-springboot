@@ -23,4 +23,13 @@ public class ReservationResource {
         return Mono.just(reservation);
 
     }
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<Reservation> createReservation(@RequestBody Mono<Reservation> reservation) {
+        //reservationService.createReservation(reservation);
+
+        Reservation reservationResp = new Reservation(1L, LocalDate.now(), LocalDate.now(), 46 , "ID56POV");
+        return Mono.just(reservationResp);
+
+    }
 }
