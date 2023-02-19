@@ -32,4 +32,21 @@ public class ReservationResource {
         return Mono.just(reservationResp);
 
     }
+
+    @PutMapping(path = "{roomId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<Reservation> updatePrice(@PathVariable String roomId, @RequestBody Mono<Reservation> reservation) {
+        //reservationService.updatePrice(roomId,reservation);
+
+        Reservation reservationResp = new Reservation(1L, LocalDate.now(), LocalDate.now(), 78 , "ID56POV");
+        return Mono.just(reservationResp);
+
+    }
+
+    @DeleteMapping(path = "{roomId}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<Boolean> deleteReservation(@PathVariable String roomId) {
+        //reservationService.deleteReservation(roomId);
+
+        return Mono.just(true);
+
+    }
 }
